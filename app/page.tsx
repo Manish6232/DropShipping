@@ -116,20 +116,6 @@ export default function Home() {
       </header>
 
       <section className="hero shell" id="apply">
-        <div className="hero-copy">
-          <div className="eyebrow"><span /> Applications are open</div>
-          <h1>Let&apos;s build your next <span>growth story.</span></h1>
-          <p>
-            Tell us where you are today. We&apos;ll map the clearest route to a
-            profitable, scalable e-commerce brand.
-          </p>
-          <div className="proof-row" aria-label="What is included">
-            <span><b>01</b> Store strategy</span>
-            <span><b>02</b> Product validation</span>
-            <span><b>03</b> Paid growth</span>
-          </div>
-        </div>
-
         <div className="form-card">
           <div className="form-topline">
             <div>
