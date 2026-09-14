@@ -259,7 +259,7 @@ export default function Home() {
               <a href="#" aria-label="LinkedIn">in</a>
             </div>
             <a className="contact-link" href="tel:+916397062646"><span>☎</span> +91 6397062646</a>
-            <a className="contact-link" href="mailto:sociodesk.help@gmail.com"><span>✉</span> sociodesk.help@gmail.com</a>
+            <a className="contact-link" href="mailto:Contact@evoclabs.com"><span>✉</span> Contact@evoclabs.com</a>
           </div>
 
           <div className="footer-column">
@@ -281,12 +281,12 @@ export default function Home() {
           <div className="footer-column">
             <h3>Get Started</h3>
             <a href="#apply">Book a Demo</a>
-            <a href="mailto:sociodesk.help@gmail.com">Contact Us</a>
+            <a href="mailto:Contact@evoclabs.com">Contact Us</a>
           </div>
         </div>
 
         <div className="shell footer-bottom">
-          <span>© 2026 FLCommerce. All rights reserved.</span>
+          <span>© 2026 All rights reserved. EVOC LABS PVT LTD.</span>
           <a href="#top" aria-label="Back to top">↑</a>
         </div>
       </footer>
