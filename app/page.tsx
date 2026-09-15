@@ -253,10 +253,13 @@ export default function Home() {
           <div className="footer-column footer-connect">
             <h3>FLCommerce Connect</h3>
             <div className="social-links" aria-label="Social media">
-              <a href="#" aria-label="Instagram">◎</a>
-              <a href="#" aria-label="YouTube">▶</a>
-              <a href="#" aria-label="X">𝕏</a>
-              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="https://www.instagram.com/flocommerce/" aria-label="FLCommerce on Instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
             </div>
             <a className="contact-link" href="tel:+916397062646"><span>☎</span> +91 6397062646</a>
             <a className="contact-link" href="mailto:Contact@evoclabs.com"><span>✉</span> Contact@evoclabs.com</a>
