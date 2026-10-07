@@ -8,7 +8,8 @@ const results = [
     src: "/results/4.png",
     title: "From setup to 700 orders",
     meta: "FULL-COMMERCE BUILD",
-    description: "A high-converting storefront backed by a complete seller system.",
+    description:
+      "A high-converting storefront backed by a complete seller system.",
     featured: true,
   },
   {
@@ -121,7 +122,10 @@ export default function Home() {
             <div>
               <span className="kicker">START YOUR APPLICATION</span>
               <h2>Get Started with Evoc Labs</h2>
-              <p>Fill out the form and we&apos;ll contact you to build your international e-commerce strategy.</p>
+              <p>
+                Fill out the form and we&apos;ll contact you to build your
+                international e-commerce strategy.
+              </p>
             </div>
           </div>
 
@@ -129,8 +133,13 @@ export default function Home() {
             <div className="success" role="status">
               <span className="success-icon">✓</span>
               <h2>Your application has been sent.</h2>
-              <p>Thanks for reaching out. The FLCommerce team will review your details and contact you shortly.</p>
-              <button type="button" onClick={() => setSubmitted(false)}>Submit another response</button>
+              <p>
+                Thanks for reaching out. The FLCommerce team will review your
+                details and contact you shortly.
+              </p>
+              <button type="button" onClick={() => setSubmitted(false)}>
+                Submit another response
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
@@ -144,52 +153,111 @@ export default function Home() {
                 />
               </div>
               <div className="field full">
-                <label htmlFor="name">Your name <i>*</i></label>
+                <label htmlFor="name">
+                  Your name <i>*</i>
+                </label>
                 <input id="name" name="name" placeholder="John Doe" required />
               </div>
               <div className="field">
-                <label htmlFor="phone">Phone No. <i>*</i></label>
-                <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required />
+                <label htmlFor="phone">
+                  Phone No. <i>*</i>
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  required
+                />
               </div>
               <div className="field">
-                <label htmlFor="seller-type">Seller Type <i>*</i></label>
-                <select id="seller-type" name="sellerType" defaultValue="" required>
-                  <option value="" disabled>Select your type</option>
+                <label htmlFor="seller-type">
+                  Seller Type <i>*</i>
+                </label>
+                <select
+                  id="seller-type"
+                  name="sellerType"
+                  defaultValue=""
+                  required
+                >
+                  <option value="" disabled>
+                    Select your type
+                  </option>
                   <option value="ecommerce-seller">Ecommerce seller</option>
                   <option value="employee">Employee</option>
                   <option value="student">Student</option>
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="target-region">Target Region <i>*</i></label>
-                <select id="target-region" name="targetRegion" defaultValue="" required>
-                  <option value="" disabled>Select target market</option>
-                  <option value="india">India</option>
-                  <option value="united-states">United States</option>
-                  <option value="united-kingdom">United Kingdom</option>
-                  <option value="uae">United Arab Emirates</option>
-                  <option value="europe">Europe</option>
+                <label htmlFor="target-region">
+                  Target Region <i>*</i>
+                </label>
+                <select
+                  id="target-region"
+                  name="targetRegion"
+                  defaultValue=""
+                  required
+                >
+                  <option value="" disabled>
+                    Select target market
+                  </option>
+                  <option value="india">UAE</option>
+                  <option value="united-states">Saudi Arabia</option>
+                  <option value="united-kingdom">Oman</option>
+                  <option value="uae">Qatar</option>
                   <option value="other">Other</option>
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="budget">Monthly Ad Budget (INR) <i>*</i></label>
+                <label htmlFor="budget">
+                  Monthly Ad Budget (INR) <i>*</i>
+                </label>
                 <select id="budget" name="budget" defaultValue="" required>
-                  <option value="" disabled>Select your budget</option>
-                  <option value="10000">₹10,000</option>
-                  <option value="15000">₹15,000</option>
-                  <option value="30000">₹30,000</option>
-                  <option value="30000-plus">₹30,000+</option>
+                  <option value="" disabled>
+                    Select your budget
+                  </option>
+                  <option value="10000">₹30K</option>
+                  <option value="15000">₹50K</option>
+                  <option value="30000">₹75K</option>
+                  <option value="30000-plus">₹75K+</option>
+                </select>
+              </div>
+              <div className="field">
+                <label htmlFor="service-fee">
+                  We charge ₹20K as our service fee. Will you be able to pay
+                  that? <i>*</i>
+                </label>
+
+                <select
+                  id="service-fee"
+                  name="serviceFee"
+                  defaultValue=""
+                  required
+                >
+                  <option value="" disabled>
+                    Select your answer
+                  </option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
                 </select>
               </div>
               {submitError && (
-                <p className="form-error" role="alert">{submitError}</p>
+                <p className="form-error" role="alert">
+                  {submitError}
+                </p>
               )}
-              <button className="submit-button" type="submit" disabled={submitting}>
+              <button
+                className="submit-button"
+                type="submit"
+                disabled={submitting}
+              >
                 {submitting ? "Sending application…" : "Submit application"}
                 {!submitting && <ArrowIcon />}
               </button>
-              <p className="privacy">By submitting, you agree to be contacted about your application. No spam—ever.</p>
+              <p className="privacy">
+                By submitting, you agree to be contacted about your application.
+                No spam—ever.
+              </p>
             </form>
           )}
         </div>
@@ -200,20 +268,32 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <span className="kicker">PROOF, NOT PROMISES</span>
-              <h2>Results we&apos;ve <span>generated.</span></h2>
+              <h2>
+                Results we&apos;ve <span>generated.</span>
+              </h2>
             </div>
-            <p>Real dashboards. Real stores. Real momentum created with focused execution.</p>
+            <p>
+              Real dashboards. Real stores. Real momentum created with focused
+              execution.
+            </p>
           </div>
 
           <div className="results-grid">
             {results.map((result, index) => (
-              <article className={`result-card ${result.featured ? "featured" : ""}`} key={result.src}>
+              <article
+                className={`result-card ${result.featured ? "featured" : ""}`}
+                key={result.src}
+              >
                 <div className="result-image">
                   <Image
                     src={result.src}
                     alt={`${result.title} performance dashboard`}
                     fill
-                    sizes={result.featured ? "(max-width: 800px) 100vw, 66vw" : "(max-width: 800px) 100vw, 33vw"}
+                    sizes={
+                      result.featured
+                        ? "(max-width: 800px) 100vw, 66vw"
+                        : "(max-width: 800px) 100vw, 33vw"
+                    }
                     priority={index < 2}
                   />
                   <span className="result-number">0{index + 1}</span>
@@ -238,16 +318,39 @@ export default function Home() {
           <div className="footer-column footer-connect">
             <h3>FLCommerce Connect</h3>
             <div className="social-links" aria-label="Social media">
-              <a href="https://www.instagram.com/flocommerce/" aria-label="FLCommerce on Instagram" target="_blank" rel="noopener noreferrer">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <a
+                href="https://www.instagram.com/flocommerce/"
+                aria-label="FLCommerce on Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
                 </svg>
               </a>
             </div>
-            <a className="contact-link" href="tel:+916397062646"><span>☎</span> +91 6397062646</a>
-            <a className="contact-link" href="mailto:Contact@evoclabs.com"><span>✉</span> Contact@evoclabs.com</a>
+            <a className="contact-link" href="tel:+916397062646">
+              <span>☎</span> +91 6397062646
+            </a>
+            <a className="contact-link" href="mailto:Contact@evoclabs.com">
+              <span>✉</span> Contact@evoclabs.com
+            </a>
           </div>
 
           <div className="footer-column">
@@ -275,7 +378,9 @@ export default function Home() {
 
         <div className="shell footer-bottom">
           <span>© 2026 All rights reserved. EVOC LABS PVT LTD.</span>
-          <a href="#top" aria-label="Back to top">↑</a>
+          <a href="#top" aria-label="Back to top">
+            ↑
+          </a>
         </div>
       </footer>
     </main>

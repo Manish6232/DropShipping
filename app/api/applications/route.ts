@@ -6,6 +6,7 @@ type Application = {
   sellerType: string;
   targetRegion: string;
   budget: string;
+  serviceFee: string;
   companyWebsite?: string;
 };
 
@@ -15,6 +16,7 @@ const fieldLabels: Array<[keyof Application, string]> = [
   ["sellerType", "Seller type"],
   ["targetRegion", "Target region"],
   ["budget", "Monthly ad budget"],
+  ["serviceFee", "20K Service fee"],
 ];
 
 const displayValues: Record<string, string> = {
@@ -31,6 +33,8 @@ const displayValues: Record<string, string> = {
   "15000": "₹15,000",
   "30000": "₹30,000",
   "30000-plus": "₹30,000+",
+  yes: "Yes",
+  no: "No",
 };
 
 function clean(value: unknown, maxLength: number) {
@@ -63,6 +67,7 @@ function validate(body: Record<string, unknown>): Application | null {
     sellerType: clean(body.sellerType, 50),
     targetRegion: clean(body.targetRegion, 50),
     budget: clean(body.budget, 30),
+    serviceFee: clean(body.serviceFee, 10),
     companyWebsite: clean(body.companyWebsite, 200),
   };
 
@@ -79,12 +84,15 @@ function validate(body: Record<string, unknown>): Application | null {
   ]);
   const budgets = new Set(["10000", "15000", "30000", "30000-plus"]);
 
+  const serviceFees = new Set(["yes", "no"]);
+
   if (
     requiredFields.some((value) => !value) ||
     !phonePattern.test(application.phone) ||
     !sellerTypes.has(application.sellerType) ||
     !targetRegions.has(application.targetRegion) ||
-    !budgets.has(application.budget)
+    !budgets.has(application.budget) ||
+    !serviceFees.has(application.serviceFee)
   ) {
     return null;
   }
