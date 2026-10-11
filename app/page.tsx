@@ -3,6 +3,12 @@
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 const results = [
   {
     src: "/results/4.png",
@@ -91,6 +97,7 @@ export default function Home() {
       }
 
       form.reset();
+      window.fbq?.("track", "Lead");
       setSubmitted(true);
     } catch (error) {
       setSubmitError(

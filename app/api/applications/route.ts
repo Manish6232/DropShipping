@@ -1,4 +1,5 @@
 const RECIPIENT_EMAIL = "sociodesk.help@gmail.com";
+const CRM_LEADS_URL = process.env.ADMIN_CRM_LEADS_URL;
 
 type Application = {
   name: string;
@@ -146,6 +147,32 @@ function buildEmail(application: Application) {
   };
 }
 
+async function saveApplicationToCrm(application: Application) {
+  if (!CRM_LEADS_URL) return;
+
+  const response = await fetch(CRM_LEADS_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: application.name,
+      phone: application.phone,
+      formType: "dropshipping-application",
+      budget: application.budget,
+      target: application.targetRegion,
+      source: "DropShipping website",
+      metadata: {
+        sellerType: application.sellerType,
+        targetRegion: application.targetRegion,
+        serviceFee: application.serviceFee,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`CRM returned ${response.status}`);
+  }
+}
+
 export async function POST(request: Request) {
   if (!request.headers.get("content-type")?.includes("application/json")) {
     return Response.json({ error: "Invalid submission format." }, { status: 415 });
@@ -169,6 +196,16 @@ export async function POST(request: Request) {
   // Silently accept honeypot submissions so bots cannot learn how they were caught.
   if (application.companyWebsite) {
     return Response.json({ success: true });
+  }
+
+  try {
+    await saveApplicationToCrm(application);
+  } catch (error) {
+    console.error("Application CRM save failed:", error);
+    return Response.json(
+      { error: "We could not save your application. Please try again." },
+      { status: 502 },
+    );
   }
 
   const apiKey = process.env.RESEND_API_KEY;
